@@ -3,34 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --paper: #f5f6f3;
-  --ink: #171b1f;
-  --muted: #5b6168;
-  --line: #dbdfd9;
-  --accent: #3454d1;
-  --accent-soft: #e7eaf8;
+  --bg: #0a0f0d;
+  --surface: #121a18;
+  --ink: #f2f4f3;
+  --muted: #93a29c;
+  --line: #1e2b27;
+  --accent: #34e0a1;
+  --accent-ink: #06110d;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 6.5rem;
-}
-
-nav[aria-label="Section navigation"] {
-  background-color: var(--paper);
 }
 
 body {
-  background-color: var(--paper);
+  background-color: var(--bg);
   color: var(--ink);
-}
-
-.font-mono-route {
-  font-family: var(--font-mono), ui-monospace, monospace;
-}
-
-a {
-  text-underline-offset: 3px;
 }
 
 *:focus-visible {

@@ -5,7 +5,6 @@ type ProjectCardProps = {
   bullets: string[];
   stack: string[];
   links: { label: string; href: string }[];
-  accentColor: string;
 };
 
 export default function ProjectCard({
@@ -15,13 +14,12 @@ export default function ProjectCard({
   bullets,
   stack,
   links,
-  accentColor,
 }: ProjectCardProps) {
   return (
-    <div className="border-l py-1 pl-6" style={{ borderColor: accentColor }}>
+    <div className="border-l-2 border-line py-1 pl-6">
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-        <h3 className="text-xl font-semibold">{title}</h3>
-        <span className="font-mono-route text-xs text-muted">{period}</span>
+        <h3 className="text-xl font-semibold text-ink">{title}</h3>
+        <span className="text-xs text-muted">{period}</span>
       </div>
 
       <p className="mt-2 max-w-[65ch] text-muted">{description}</p>
@@ -36,9 +34,7 @@ export default function ProjectCard({
         {stack.map((s, i) => (
           <span key={s}>
             {s}
-            {i < stack.length - 1 && (
-              <span className="mx-1.5 text-line">/</span>
-            )}
+            {i < stack.length - 1 && <span className="mx-1.5 text-line">/</span>}
           </span>
         ))}
       </div>

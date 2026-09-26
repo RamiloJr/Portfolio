@@ -1,3 +1,4 @@
+import { Code2, Server, Database, Network, Cloud } from "lucide-react";
 import SideNav from "@/components/SideNav";
 import ProjectCard from "@/components/ProjectCard";
 
@@ -12,23 +13,11 @@ const projects = [
       "Built full CRUD tenant management, subdomain proxy routing, a tenant directory landing page, and per-tenant pages assembled from modular UI sections (Hero, Lead Form, Project Gallery).",
       "Shipped an admin dashboard for branding and content control, with image uploads through Supabase Storage and configurable section ordering.",
     ],
-    stack: [
-      "Next.js",
-      "NestJS",
-      "Prisma",
-      "PostgreSQL",
-      "Supabase Storage",
-      "Vercel",
-      "Render",
-    ],
+    stack: ["Next.js", "NestJS", "Prisma", "PostgreSQL", "Supabase Storage", "Vercel", "Render"],
     links: [
       { label: "starblue.vercel.app", href: "https://starblue.vercel.app" },
-      {
-        label: "stjosephapdc.vercel.app",
-        href: "https://stjosephapdc.vercel.app",
-      },
+      { label: "stjosephapdc.vercel.app", href: "https://stjosephapdc.vercel.app" },
     ],
-    accentColor: "#3454D1",
   },
   {
     title: "Inventory Management System",
@@ -42,54 +31,38 @@ const projects = [
     ],
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
     links: [
-      {
-        label: "Live app",
-        href: "https://frontend-umber-nine-47.vercel.app",
-      },
+      { label: "Live app", href: "https://frontend-umber-nine-47.vercel.app" },
       { label: "Frontend repo", href: "https://github.com/RamiloJr/frontend" },
       { label: "Backend repo", href: "https://github.com/RamiloJr/backend" },
     ],
-    accentColor: "#2F6F4E",
   },
 ];
 
 const skillGroups = [
   {
     label: "Frontend",
-    items: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "JavaScript",
-      "Tailwind CSS",
-      "HTML/CSS",
-    ],
-    icon: "frontend" as const,
+    icon: Code2,
+    items: ["Next.js", "React", "TypeScript", "JavaScript", "Tailwind CSS", "HTML/CSS"],
   },
   {
     label: "Backend",
+    icon: Server,
     items: ["NestJS", "Node.js", "Prisma ORM", "REST API design"],
-    icon: "backend" as const,
   },
   {
     label: "Database & storage",
+    icon: Database,
     items: ["Supabase (PostgreSQL)", "Supabase Auth", "Supabase Storage"],
-    icon: "database" as const,
   },
   {
     label: "Architecture",
-    items: [
-      "Multi-tenant systems",
-      "Subdomain routing",
-      "CRUD systems",
-      "PWA / service workers",
-    ],
-    icon: "architecture" as const,
+    icon: Network,
+    items: ["Multi-tenant systems", "Subdomain routing", "CRUD systems", "PWA / service workers"],
   },
   {
     label: "DevOps",
+    icon: Cloud,
     items: ["Vercel", "Render", "Git / GitHub", "CORS & security middleware"],
-    icon: "devops" as const,
   },
 ];
 
@@ -122,207 +95,120 @@ const experience = [
   },
 ];
 
-function SkillIcon({ name }: { name: (typeof skillGroups)[number]["icon"] }) {
-  const common = {
-    width: 22,
-    height: 22,
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 1.5,
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-    "aria-hidden": true,
-  };
-
-  switch (name) {
-    case "frontend":
-      return (
-        <svg {...common}>
-          <polyline points="8 6 3 12 8 18" />
-          <polyline points="16 6 21 12 16 18" />
-        </svg>
-      );
-    case "backend":
-      return (
-        <svg {...common}>
-          <rect x="3" y="4" width="18" height="6" rx="1" />
-          <rect x="3" y="14" width="18" height="6" rx="1" />
-          <circle cx="7" cy="7" r="0.75" />
-          <circle cx="7" cy="17" r="0.75" />
-        </svg>
-      );
-    case "database":
-      return (
-        <svg {...common}>
-          <ellipse cx="12" cy="6" rx="7" ry="3" />
-          <path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6" />
-          <path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3" />
-        </svg>
-      );
-    case "architecture":
-      return (
-        <svg {...common}>
-          <rect x="3" y="3" width="7" height="7" />
-          <rect x="14" y="3" width="7" height="7" />
-          <rect x="3" y="14" width="7" height="7" />
-          <rect x="14" y="14" width="7" height="7" />
-        </svg>
-      );
-    case "devops":
-      return (
-        <svg {...common}>
-          <polyline points="5 8 2 12 5 16" />
-          <polyline points="19 8 22 12 19 16" />
-          <line x1="14" y1="6" x2="10" y2="18" />
-        </svg>
-      );
-  }
-}
-
 export default function Home() {
   return (
     <>
       <SideNav />
-      <main className="relative z-0">
+      <main>
         <section
           id="home"
-          className="mx-auto grid min-h-[70vh] max-w-5xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:gap-16 lg:px-8 lg:py-28"
+          className="mx-auto grid max-w-6xl gap-12 px-6 py-24 lg:grid-cols-2 lg:items-center"
         >
           <div>
-            <p className="font-mono-route mb-4 text-sm text-accent">
-              /quito.dev/full-stack
-            </p>
-            <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+            <p className="mb-4 text-sm font-medium text-accent">Full-stack developer</p>
+            <h1 className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
               Ramilo Jr. Quito
             </h1>
-            <p className="mt-4 max-w-[50ch] text-lg text-muted">
-              Full-stack developer building multi-tenant platforms — from
-              subdomain-routed tenant sites to the dashboards that run them.
+            <p className="mt-4 max-w-[46ch] text-lg text-muted">
+              Building multi-tenant platforms and the dashboards that run them —
+              from subdomain routing to admin tools non-technical teams can use.
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-6">
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="#contact"
+                className="rounded-md bg-accent px-6 py-3 text-sm font-semibold text-accent-ink transition-opacity hover:opacity-90"
+              >
+                Let&apos;s connect
+              </a>
               <a
                 href="#projects"
-                className="inline-flex bg-accent px-4 py-2 text-sm font-medium text-paper transition-opacity hover:opacity-90"
+                className="rounded-md border border-line px-6 py-3 text-sm font-semibold text-ink transition-colors hover:border-accent"
               >
                 View projects
               </a>
-              <a
-                href="#contact"
-                className="text-sm font-medium text-muted transition-colors hover:text-ink"
-              >
-                Get in touch
-              </a>
             </div>
           </div>
-          <div className="flex justify-center md:justify-end">
+
+          <div className="flex justify-center lg:justify-end">
             <div
-              className="flex h-52 w-52 items-center justify-center rounded-full border border-line text-muted sm:h-64 sm:w-64"
-              aria-hidden="true"
+              className="relative flex h-64 w-64 items-center justify-center rounded-full"
+              style={{ boxShadow: "0 0 80px 10px rgba(52,224,161,0.15)" }}
             >
-              <span className="font-mono-route text-2xl tracking-widest">
-                RQ
-              </span>
+              <div className="absolute inset-0 rounded-full border border-accent/30" />
+              <div className="absolute inset-6 rounded-full border border-accent/20" />
+              <div className="flex h-40 w-40 items-center justify-center rounded-full bg-surface text-3xl font-bold text-accent">
+                RJQ
+              </div>
             </div>
-            <span className="sr-only">Portrait placeholder</span>
           </div>
         </section>
 
-        <section
-          id="about"
-          className="mx-auto max-w-5xl border-t border-line px-6 py-24 lg:px-8"
-        >
-          <h2 className="font-mono-route mb-8 text-sm text-muted">about</h2>
-          <p className="max-w-[65ch] text-lg leading-relaxed">
-            I&apos;m an IT graduate from STI College Cubao with hands-on
-            experience shipping production systems end to end — NestJS and
-            Prisma on the backend, Next.js and Tailwind on the front, deployed
-            on Vercel and Render. My recent work has centered on multi-tenant
-            architecture: subdomain routing, tenant isolation, and admin tools
-            that let non-technical people manage their own sites and
-            inventories without needing a developer in the loop.
+        <section id="about" className="mx-auto max-w-6xl border-t border-line px-6 py-16">
+          <h2 className="mb-6 text-2xl font-semibold">About</h2>
+          <p className="max-w-[65ch] text-lg leading-relaxed text-muted">
+            I&apos;m an IT graduate from STI College Cubao with hands-on experience shipping
+            production systems end to end — NestJS and Prisma on the backend, Next.js and
+            Tailwind on the front, deployed on Vercel and Render. My recent work has centered
+            on multi-tenant architecture: subdomain routing, tenant isolation, and admin tools
+            that let non-technical people manage their own sites and inventories without
+            needing a developer in the loop.
           </p>
         </section>
 
-        <section
-          id="projects"
-          className="mx-auto max-w-5xl border-t border-line px-6 py-24 lg:px-8"
-        >
-          <h2 className="font-mono-route mb-10 text-sm text-muted">
-            projects
-          </h2>
-          <div className="space-y-16">
+        <section id="projects" className="mx-auto max-w-6xl border-t border-line px-6 py-16">
+          <h2 className="mb-10 text-2xl font-semibold">Projects</h2>
+          <div className="space-y-14">
             {projects.map((p) => (
               <ProjectCard key={p.title} {...p} />
             ))}
           </div>
         </section>
 
-        <section
-          id="skills"
-          className="mx-auto max-w-5xl border-t border-line px-6 py-24 lg:px-8"
-        >
-          <h2 className="font-mono-route mb-10 text-sm text-muted">skills</h2>
+        <section id="skills" className="mx-auto max-w-6xl border-t border-line px-6 py-16">
+          <h2 className="mb-10 text-2xl font-semibold">Technical expertise</h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {skillGroups.map((g) => (
-              <article
-                key={g.label}
-                className="border border-line p-6 transition-colors hover:border-ink/30"
-              >
-                <div className="mb-4 text-accent">
-                  <SkillIcon name={g.icon} />
+            {skillGroups.map((g) => {
+              const Icon = g.icon;
+              return (
+                <div key={g.label} className="rounded-lg border border-line bg-surface p-6">
+                  <Icon className="mb-4 h-6 w-6 text-accent" strokeWidth={1.75} />
+                  <h3 className="mb-2 font-semibold">{g.label}</h3>
+                  <p className="text-sm leading-relaxed text-muted">{g.items.join(", ")}</p>
                 </div>
-                <h3 className="mb-3 text-sm font-semibold">{g.label}</h3>
-                <p className="text-sm leading-relaxed text-muted">
-                  {g.items.join(", ")}
-                </p>
-              </article>
-            ))}
+              );
+            })}
           </div>
         </section>
 
-        <section
-          id="experience"
-          className="mx-auto max-w-5xl border-t border-line px-6 py-24 lg:px-8"
-        >
-          <h2 className="font-mono-route mb-10 text-sm text-muted">
-            experience
-          </h2>
-          <div className="space-y-10">
+        <section id="experience" className="mx-auto max-w-6xl border-t border-line px-6 py-16">
+          <h2 className="mb-10 text-2xl font-semibold">Experience</h2>
+          <div className="space-y-8">
             {experience.map((e) => (
               <div
                 key={e.role + e.org}
-                className="flex flex-col gap-2 sm:flex-row sm:justify-between sm:gap-10"
+                className="flex flex-col gap-1 sm:flex-row sm:justify-between sm:gap-6"
               >
                 <div className="shrink-0 sm:w-1/3">
                   <p className="font-medium">{e.role}</p>
                   <p className="text-sm text-muted">{e.org}</p>
-                  <p className="font-mono-route mt-1 text-xs text-muted">
-                    {e.period}
-                  </p>
+                  <p className="mt-1 text-xs text-muted">{e.period}</p>
                 </div>
                 <p className="max-w-[55ch] text-muted sm:w-2/3">{e.detail}</p>
               </div>
             ))}
           </div>
-          <p className="mt-14 text-sm text-muted">
+          <p className="mt-10 text-sm text-muted">
             BS in Information Technology, STI College Cubao — 2022–2026
           </p>
         </section>
 
-        <section
-          id="contact"
-          className="mx-auto max-w-5xl border-t border-line px-6 py-24 lg:px-8"
-        >
-          <h2 className="font-mono-route mb-8 text-sm text-muted">contact</h2>
-          <p className="max-w-[55ch] text-lg">
+        <section id="contact" className="mx-auto max-w-6xl border-t border-line px-6 py-20">
+          <h2 className="mb-6 text-2xl font-semibold">Contact</h2>
+          <p className="max-w-[55ch] text-lg text-muted">
             Open to full-stack roles. The fastest way to reach me is email.
           </p>
-          <div className="mt-8 flex flex-col gap-3 text-lg">
-            <a
-              href="mailto:jrquito12@gmail.com"
-              className="w-fit text-accent hover:underline"
-            >
+          <div className="mt-6 flex flex-col gap-2 text-lg">
+            <a href="mailto:jrquito12@gmail.com" className="w-fit text-accent hover:underline">
               jrquito12@gmail.com
             </a>
             <a
@@ -342,9 +228,7 @@ export default function Home() {
               linkedin.com/in/ramilo-jr-quito
             </a>
           </div>
-          <p className="mt-20 text-xs text-muted">
-            Burgos, Montalban, Rizal · 0970 324 6318
-          </p>
+          <p className="mt-16 text-xs text-muted">Burgos, Montalban, Rizal · 0970 324 6318</p>
         </section>
       </main>
     </>
