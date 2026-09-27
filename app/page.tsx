@@ -1,4 +1,6 @@
+
 import { Code2, Server, Database, Network, Cloud } from "lucide-react";
+import Image from "next/image";
 import SideNav from "@/components/SideNav";
 import ProjectCard from "@/components/ProjectCard";
 
@@ -136,8 +138,16 @@ export default function Home() {
             >
               <div className="absolute inset-0 rounded-full border border-accent/30" />
               <div className="absolute inset-6 rounded-full border border-accent/20" />
-              <div className="flex h-40 w-40 items-center justify-center rounded-full bg-surface text-3xl font-bold text-accent">
-                RJQ
+              <div className="h-40 w-40 overflow-hidden rounded-full bg-surface">
+                <Image
+                  src="/profile.JPG"
+                  width={160}
+                  height={160}
+                  alt="Ramilo Jr. Quito"
+                  loading="eager"
+                  unoptimized
+                  className="h-full w-full rounded-full object-cover"
+                />
               </div>
             </div>
           </div>
