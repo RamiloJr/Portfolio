@@ -1,5 +1,5 @@
 
-import { Code2, Server, Database, Network, Cloud } from "lucide-react";
+import { Code2, Server, Database, Network, Cloud, Download } from "lucide-react";
 import Image from "next/image";
 import SideNav from "@/components/SideNav";
 import ProjectCard from "@/components/ProjectCard";
@@ -132,23 +132,29 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <div
-              className="relative flex h-64 w-64 items-center justify-center rounded-full"
-              style={{ boxShadow: "0 0 80px 10px rgba(52,224,161,0.15)" }}
-            >
-              <div className="absolute inset-0 rounded-full border border-accent/30" />
-              <div className="absolute inset-6 rounded-full border border-accent/20" />
-              <div className="h-40 w-40 overflow-hidden rounded-full bg-surface">
-                <Image
-                  src="/profile.JPG"
-                  width={160}
-                  height={160}
-                  alt="Ramilo Jr. Quito"
-                  loading="eager"
-                  unoptimized
-                  className="h-full w-full rounded-full object-cover"
-                />
+            <div className="flex flex-col items-center">
+              <div
+                className="relative flex h-64 w-64 items-center justify-center rounded-full"
+                style={{ boxShadow: "0 0 80px 10px rgba(52,224,161,0.15)" }}
+              >
+                <div className="absolute inset-0 rounded-full border border-accent/30" />
+                <div className="absolute inset-6 rounded-full border border-accent/20" />
+                <div className="h-40 w-40 overflow-hidden rounded-full bg-surface">
+                  <Image
+                    src="/profile.JPG"
+                    width={160}
+                    height={160}
+                    alt="Ramilo Jr. Quito"
+                    loading="eager"
+                    unoptimized
+                    className="h-full w-full rounded-full object-cover"
+                  />
+                </div>
               </div>
+              <a href="/Quito_Resume_ATS2.pdf" download className="mt-4 inline-flex w-fit items-center gap-2 rounded-md border border-accent/50 bg-surface px-4 py-2 text-sm font-semibold text-accent transition-colors hover:border-accent hover:bg-accent hover:text-accent-ink">
+                <Download className="h-4 w-4" aria-hidden="true" />
+                Download Resume
+              </a>
             </div>
           </div>
         </section>
@@ -221,20 +227,10 @@ export default function Home() {
             <a href="mailto:jrquito12@gmail.com" className="w-fit text-accent hover:underline">
               jrquito12@gmail.com
             </a>
-            <a
-              href="https://github.com/RamiloJr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-fit text-muted transition-colors hover:text-ink"
-            >
+            <a href="https://github.com/RamiloJr" target="_blank" rel="noopener noreferrer" className="w-fit text-muted transition-colors hover:text-ink">
               github.com/RamiloJr
             </a>
-            <a
-              href="https://www.linkedin.com/in/ramilo-jr-quito-194b88317"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-fit text-muted transition-colors hover:text-ink"
-            >
+            <a href="https://www.linkedin.com/in/ramilo-jr-quito-194b88317" target="_blank" rel="noopener noreferrer" className="w-fit text-muted transition-colors hover:text-ink">
               linkedin.com/in/ramilo-jr-quito
             </a>
           </div>
