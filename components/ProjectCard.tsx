@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 type ProjectCardProps = {
   title: string;
   period: string;
@@ -5,6 +7,7 @@ type ProjectCardProps = {
   bullets: string[];
   stack: string[];
   links: { label: string; href: string }[];
+  preview?: ReactNode;
 };
 
 export default function ProjectCard({
@@ -14,6 +17,7 @@ export default function ProjectCard({
   bullets,
   stack,
   links,
+  preview,
 }: ProjectCardProps) {
   return (
     <div className="border-l-2 border-line py-1 pl-6">
@@ -23,6 +27,8 @@ export default function ProjectCard({
       </div>
 
       <p className="mt-2 max-w-[65ch] text-muted">{description}</p>
+
+      {preview}
 
       <ul className="mt-3 max-w-[65ch] list-outside list-disc space-y-1.5 pl-4 text-sm text-ink/90">
         {bullets.map((b) => (

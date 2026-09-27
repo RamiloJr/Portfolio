@@ -3,6 +3,8 @@ import { Code2, Server, Database, Network, Cloud, Download } from "lucide-react"
 import Image from "next/image";
 import SideNav from "@/components/SideNav";
 import ProjectCard from "@/components/ProjectCard";
+import InventoryPreview from "@/components/InventoryPreview";
+import PromotionalPreview from "@/components/PromotionalPreview";
 
 const projects = [
   {
@@ -175,7 +177,17 @@ export default function Home() {
           <h2 className="mb-10 text-2xl font-semibold">Projects</h2>
           <div className="space-y-14">
             {projects.map((p) => (
-              <ProjectCard key={p.title} {...p} />
+              <ProjectCard
+                key={p.title}
+                {...p}
+                preview={
+                  p.title === "Promotional Website Platform" ? (
+                    <PromotionalPreview />
+                  ) : p.title === "Inventory Management System" ? (
+                    <InventoryPreview />
+                  ) : undefined
+                }
+              />
             ))}
           </div>
         </section>
